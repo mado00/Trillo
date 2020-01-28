@@ -4,6 +4,12 @@
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  };
 }
 
 .header {
@@ -14,11 +20,22 @@
   height: 7rem;
   background-color: #fff;
   border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    height: 11rem;
+    align-content: space-around;
+  }
 }
 
 // flex container
 .content {
   display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    // side bar is transition to the top from side
+    flex-direction: column;
+  };
 }
 
 .sidebar {
@@ -38,6 +55,7 @@
   flex: 1;
 }
 
+/////////////////////////////////
 // DETAIL 
 .detail {
   font-size: 1.4rem;
@@ -45,8 +63,18 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
+
+  // always order bigger screen to smaller screen
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
 }
 
+/////////////////////////////////
 // DESCRIPTION
 .description {
   background-color: #fff;
@@ -55,11 +83,25 @@
   // occupy 60% of detail
   flex: 0 0 60%;
   margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
 }
 
+/////////////////////////////////
 // USER REVIEWS
 .user-reviews {
-  background-color: yellow;
   // remaining space 100 - 60 = 40 rest of detail
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
