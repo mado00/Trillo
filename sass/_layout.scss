@@ -13,8 +13,7 @@
   align-items: center;
   height: 7rem;
   background-color: #fff;
-  border-bottom: var(--color-grey-light-2);
-
+  border-bottom: var(--line);
 }
 
 // flex container
@@ -35,9 +34,32 @@
 
 .hotel-view {
   background-color: #fff;
-  background-color: pink;
   // flex: 1 - as much as they can grow
-  height: 80rem;
   flex: 1;
+}
 
+// DETAIL 
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+}
+
+// DESCRIPTION
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  // occupy 60% of detail
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+}
+
+// USER REVIEWS
+.user-reviews {
+  background-color: yellow;
+  // remaining space 100 - 60 = 40 rest of detail
+  flex: 1;
 }
